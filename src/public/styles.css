@@ -1,0 +1,98 @@
+:root {
+  color-scheme: light;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f4f6f8;
+  color: #1f2933;
+}
+
+.site-header {
+  background: #102a43;
+  padding: 1rem;
+}
+
+.site-header nav {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.site-header a,
+.site-header button {
+  color: #fff;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.subtitle {
+  color: #52606d;
+}
+
+.jobs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.job-card,
+.card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(16, 42, 67, 0.1);
+}
+
+.card {
+  max-width: 420px;
+}
+
+label,
+input,
+button {
+  display: block;
+  width: 100%;
+}
+
+input,
+button {
+  padding: 0.6rem;
+  margin-top: 0.4rem;
+  margin-bottom: 0.8rem;
+}
+
+button {
+  background: #0b6efd;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.pagination {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.error {
+  color: #b42318;
+  font-weight: bold;
+}
+
+.inline-form {
+  display: inline;
+}
