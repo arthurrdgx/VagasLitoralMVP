@@ -1,0 +1,32 @@
+<%- include('../partials_header', { title: 'Admin Dashboard' }) %>
+
+<h1>Admin Dashboard</h1>
+<p>Welcome, <strong><%= user.username %></strong>. Review pending submissions and publish manually.</p>
+
+<section class="jobs-grid">
+  <% if (pendingSubmissions.length === 0) { %>
+    <article class="job-card"><p>No pending submissions found.</p></article>
+  <% } %>
+
+  <% pendingSubmissions.forEach((submission) => { %>
+    <article class="job-card">
+      <h2><%= submission.title %></h2>
+      <p><strong>ID:</strong> <%= submission.id %></p>
+      <p><strong>Posting date:</strong> <%= submission.posting_date %></p>
+      <p><strong>Company:</strong> <%= submission.company %></p>
+      <p><strong>City:</strong> <%= submission.city %></p>
+      <p><strong>Address:</strong> <%= submission.address %></p>
+      <p><strong>Contact:</strong> <%= submission.contact %></p>
+      <p><strong>Contract type:</strong> <%= submission.contract_type %></p>
+      <p><strong>Salary:</strong> <%= submission.optional_salary || 'Not provided' %></p>
+      <p><strong>Posting duration:</strong> <%= submission.posting_duration %> days</p>
+
+      <form action="/admin/publish/<%= submission.id %>" method="post">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button type="submit">Publish</button>
+      </form>
+    </article>
+  <% }) %>
+</section>
+
+<%- include('../partials_footer') %>
